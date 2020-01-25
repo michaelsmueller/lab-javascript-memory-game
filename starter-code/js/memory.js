@@ -3,6 +3,7 @@
 class MemoryGame {
   constructor(cards){
     this.cards = cards;
+    this.shuffleCards();
     // add the rest of the class properties here
     this.pickedCards = [];
     this.pairsClicked = 0;
@@ -11,10 +12,10 @@ class MemoryGame {
 
   shuffleCards() {
     // from https://bost.ocks.org/mike/shuffle/
-    // except it appears to be broken: to fix!
     if (this.cards === undefined) {
       return undefined;
     } else {
+      console.log(this.cards);
       let remainingCards = this.cards.length;
       let lastCard, randomCard;
       while (remainingCards) {
